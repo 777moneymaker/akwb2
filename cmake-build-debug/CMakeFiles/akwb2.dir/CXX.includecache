@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/mchodkowski/Desktop/akwb2/Libraries/Graph.cpp
+Graph.hpp
+/Users/mchodkowski/Desktop/akwb2/Libraries/Graph.hpp
+iostream
+-
+fstream
+-
+vector
+-
+
+/Users/mchodkowski/Desktop/akwb2/Libraries/Graph.hpp
+iostream
+-
+vector
+-
+

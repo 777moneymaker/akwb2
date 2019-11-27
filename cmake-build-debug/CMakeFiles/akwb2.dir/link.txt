@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/akwb2.dir/Libraries/Vertex.cpp.o CMakeFiles/akwb2.dir/main.cpp.o CMakeFiles/akwb2.dir/Libraries/Graph.cpp.o  -o akwb2 

@@ -1,0 +1,3 @@
+/Users/mchodkowski/Desktop/akwb2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/mchodkowski/Desktop/akwb2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/mchodkowski/Desktop/akwb2/cmake-build-debug/CMakeFiles/akwb2.dir
