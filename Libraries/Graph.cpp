@@ -26,14 +26,8 @@ void Graph::createSubstrings(){
             stack.push_back(c);
         }
         while(not(stack.empty())){
-            if(stack.size() <= this->treshold){
-                seq = "";
-                for(auto c : stack){
-                    seq.push_back(c);
-                }
-                this->sequences_vertices[i].push_back(Vertex(seq));
+            if(stack.size() < treshold)
                 break;
-            }
             for(int j = 0; j < this->treshold; j++){
                 seq.push_back(stack[j]);
             }
