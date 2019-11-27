@@ -6,19 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/Users/mchodkowski/Desktop/akwb2/Libraries/Graph.cpp
-Graph.hpp
-/Users/mchodkowski/Desktop/akwb2/Libraries/Graph.hpp
+../Libraries/Graph.hpp
 iostream
 -
-fstream
+vector
+-
+Vertex.hpp
+../Libraries/Vertex.hpp
+
+../Libraries/Vertex.hpp
+iostream
 -
 vector
 -
 
-/Users/mchodkowski/Desktop/akwb2/Libraries/Graph.hpp
+/home/moneymaker/Desktop/akwb2/main.cpp
 iostream
 -
-vector
+tuple
 -
+Graph.hpp
+/home/moneymaker/Desktop/akwb2/Graph.hpp
 

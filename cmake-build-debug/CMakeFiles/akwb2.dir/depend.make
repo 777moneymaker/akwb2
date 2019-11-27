@@ -3,6 +3,7 @@
 
 CMakeFiles/akwb2.dir/Libraries/Graph.cpp.o: ../Libraries/Graph.cpp
 CMakeFiles/akwb2.dir/Libraries/Graph.cpp.o: ../Libraries/Graph.hpp
+CMakeFiles/akwb2.dir/Libraries/Graph.cpp.o: ../Libraries/Vertex.hpp
 
 CMakeFiles/akwb2.dir/Libraries/Vertex.cpp.o: ../Libraries/Vertex.cpp
 CMakeFiles/akwb2.dir/Libraries/Vertex.cpp.o: ../Libraries/Vertex.hpp

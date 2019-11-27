@@ -6,72 +6,100 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <string>
 
-Graph::Graph() {
+Graph::Graph(int treshold, int quality){
+    this->treshold = treshold;
+    this->quality = quality;
     this->readSequence();
     this->readQualities();
+    this->createSubstrings();
 }
 
-void Graph::readQualities() {
+void Graph::createSubstrings(){
+    vector<char> stack;
+    string seq;
+    for(int i = 0; i < (int)this->sequences.size(); i++){
+        stack.clear();
+        this->sequences_vertices.emplace_back(vector<Vertex>());
+        for(auto &c : this->sequences[i]){
+            stack.push_back(c);
+        }
+        while(not(stack.empty())){
+            if(stack.size() <= this->treshold){
+                seq = "";
+                for(auto c : stack){
+                    seq.push_back(c);
+                }
+                this->sequences_vertices[i].push_back(Vertex(seq));
+                break;
+            }
+            for(int j = 0; j < this->treshold; j++){
+                seq.push_back(stack[j]);
+            }
+            this->sequences_vertices[i].push_back(Vertex(seq));
+            seq = "";
+            stack.erase(stack.begin());
+        }
+    }
+}
+
+void Graph::printSubstrings(){
+    for(auto &line : this->sequences_vertices){
+        for(auto &v : line){
+            cout << v.getSequence() << " ";
+        }
+        cout << endl;
+    }
+}
+
+void Graph::readQualities(){
     fstream file("qualities.txt", ios::in);
     string quality;
     int row = -1;
-    vector<vector<int> > temp_qualities, qualities;
     while(!file.eof()){
         file >> quality;
         if(quality == ">"){
+            this->qualities.emplace_back(vector<int>());
             row++;
         }else{
-            temp_qualities.emplace_back(vector<int>());
-            temp_qualities[row].push_back(stoi(quality));
+            this->qualities[row].push_back(stoi(quality));
         }
     }
-    for(int i = 0; i < temp_qualities.size(); i++){
-        qualities.emplace_back(vector<int>());
-        for(auto c : temp_qualities[i]){
-            qualities[i].push_back(c);
-        }
-    }
-    this->qualities = qualities;
 }
 
-void Graph::readSequence() {
+void Graph::readSequence(){
     string base;
+    string temp;
     int row = -1;
-    vector<vector<string> > temp_sequence, sequences;
     fstream file("sample.txt", ios::in);
     while(!file.eof()){
         file >> base;
         if(base == ">"){
+            this->sequences.emplace_back(vector<char>());
             row++;
         }else{
-            temp_sequence.emplace_back(vector<string>());
-            temp_sequence[row].push_back(base);
+            for(auto c : base){
+                this->sequences[row].push_back(c);
+            }
         }
     }
-    for(int i = 0; i < temp_sequence.size(); i++){
-        sequences.emplace_back(vector<string>());
-        for(auto &c : temp_sequence[i]){
-            sequences[i].push_back(c);
-        }
-    }
-    this->sequences = sequences;
 }
 
-void Graph::printQualities() {
+void Graph::printQualities(){
     for(const auto &line : this->qualities){
         for(const auto &qual : line){
             cout << qual << " ";
         }
-        cout<<endl;
+        cout << endl;
     }
 }
 
-void Graph::printSequence() {
+void Graph::printSequence(){
     for(const auto &line : this->sequences){
         for(const auto &base : line){
             cout << base << " ";
         }
-        cout<<endl;
+        cout << endl;
     }
 }

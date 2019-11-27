@@ -3,19 +3,31 @@
 
 #include <iostream>
 #include <vector>
+#include "Vertex.hpp"
 
 using namespace std;
 
-class Graph {
+class Graph{
 private:
-    vector<vector<string> > sequences;
-    vector<vector<int> > qualities;
-    void readQualities();
-    void readSequence();
+   int treshold, quality;
+   vector<vector<Vertex> > sequences_vertices;
+   vector<vector<char> > sequences;
+   vector<vector<int> > qualities;
+
+   void readQualities();
+
+   void readSequence();
+
+   void createSubstrings();
+
 public:
-    explicit Graph();
-    void printSequence();
-    void printQualities();
+   explicit Graph(int treshold = 4, int quality = 15);
+
+   void printSequence();
+
+   void printQualities();
+
+   void printSubstrings();
 };
 
 
