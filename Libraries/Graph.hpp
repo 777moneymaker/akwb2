@@ -10,9 +10,9 @@ using namespace std;
 class Graph{
 private:
    int treshold, quality;
-   vector<vector<Vertex> > sequences_vertices;
    vector<vector<char> > sequences;
    vector<vector<int> > qualities;
+   vector<vector<Vertex> > sequences_vertices;
 
    void readQualities();
 
@@ -21,6 +21,7 @@ private:
    void createSubstrings();
 
 public:
+
    explicit Graph(int treshold = 4, int quality = 15);
 
    void printSequence();

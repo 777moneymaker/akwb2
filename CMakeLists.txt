@@ -7,8 +7,8 @@ include_directories(Data)
 include_directories(Libraries)
 
 add_executable(akwb2
-        cmake-build-debug/sample.txt
-        cmake-build-debug/qualities.txt
+        cmake-build-debug/sample.fasta
+        cmake-build-debug/qualities.qual
         Libraries/Vertex.cpp
         Libraries/Vertex.hpp
         LICENSE

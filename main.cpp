@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main(){
-    auto *G = new Graph(6);
+    auto *G = new Graph(4, 20);
     G->printSubstrings();
     return 0;
 }
