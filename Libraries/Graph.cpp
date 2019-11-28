@@ -9,13 +9,15 @@
 #include <string>
 #include <algorithm>
 
-Graph::Graph(int treshold, int quality){
-    this->treshold = treshold;
-    this->quality = quality;
+
+Graph::Graph(int t, int q){
+    this->treshold = t;
+    this->quality = q;
     this->readSequence();
     this->readQualities();
     this->createSubstrings();
     this->connectVertices();
+    this->connectWithErrors();
 }
 
 void Graph::printMatches(int seq_number){
@@ -25,6 +27,9 @@ void Graph::printMatches(int seq_number){
     }
     cout << this->sequences_vertices[seq_number - 1][seq_number -1].getSequence() << " adj list: " << endl;
     for(auto &v : this->sequences_vertices[seq_number - 1][seq_number -1].adj_list){
+        cout << v->getSequence() << " " << v->getSeqNumber() << " ";
+    }
+    for(auto &v : this->sequences_vertices[seq_number - 1][seq_number -1].adj_list_with_errors){
         cout << v->getSequence() << " " << v->getSeqNumber() << " ";
     }
 }
@@ -40,6 +45,25 @@ void Graph::connectVertices(){
                     if(v.doesMatch(x.getSequence())){
                         if(not(count(v.adj_list.begin(), v.adj_list.end(), x.getSelf()))){
                             v.adj_list.push_back(x.getSelf());
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+void Graph::connectWithErrors(){
+    for(int i = 0; i < this->sequences_vertices.size(); i++){
+        for(auto &v : this->sequences_vertices[i]){
+            v.adj_list.clear();
+            for(int j = 1; j < this->sequences_vertices.size(); j++){
+                if(i == j)
+                    continue;
+                for(auto &x : this->sequences_vertices[j]){
+                    if(v.doesMatchWithErrors(x.getSequence())){
+                        if(not(count(v.adj_list_with_errors.begin(), v.adj_list_with_errors.end(), x.getSelf()))){
+                            v.adj_list_with_errors.push_back(x.searchForMutations());
                         }
                     }
                 }
@@ -65,14 +89,14 @@ void Graph::createSubstrings(){
                 qual_stack.push_back(q);
             }
             while(not(base_stack.empty())){
-                if(base_stack.size() < treshold or qual_stack.size() < treshold){
+                if(base_stack.size() < Graph::treshold or qual_stack.size() < Graph::treshold){
                     break;
                 }
                 for(int j = 0; j < this->treshold; j++){
                     seq.push_back(base_stack[j]);
                     v_qualities.push_back(qual_stack[j]);
                 }
-                this->sequences_vertices[i].push_back(Vertex(seq, v_qualities, i + 1));
+                this->sequences_vertices[i].push_back(Vertex(seq, v_qualities, i + 1, this->getQuality()));
                 seq = "";
                 v_qualities.clear();
                 qual_stack.erase(qual_stack.begin());
@@ -144,4 +168,8 @@ void Graph::printSequence(){
         }
         cout << endl;
     }
+}
+
+int Graph::getQuality(){
+    return quality;
 }

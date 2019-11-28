@@ -22,7 +22,11 @@ private:
    
    void connectVertices();
 
+   void connectWithErrors();
+
 public:
+
+   int getQuality();
 
    void printMatches(int seq_number);
 

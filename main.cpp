@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main(){
-    auto *G = new Graph(4, 20);
-    G->printMatches(1);
+    auto *G = new Graph(4, 35);
+    //G->printMatches(1);
     return 0;
 }
