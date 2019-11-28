@@ -19,8 +19,12 @@ private:
    void readSequence();
 
    void createSubstrings();
+   
+   void connectVertices();
 
 public:
+
+   void printMatches(int seq_number);
 
    explicit Graph(int treshold = 4, int quality = 15);
 

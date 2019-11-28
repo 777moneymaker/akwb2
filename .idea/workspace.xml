@@ -13,18 +13,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3c5f4371-7800-4f2d-99be-0dd688d7465b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libraries/Graph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Graph.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libraries/Graph.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Graph.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libraries/Vertex.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Vertex.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libraries/Vertex.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Vertex.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/Libraries/Graph.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/Libraries/Graph.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/akwb2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/akwb2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/akwb2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/akwb2.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/qualities.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/qualities.qual" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sample.fasta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,7 +83,7 @@
       <updated>1574866104029</updated>
       <workItem from="1574866105164" duration="3021000" />
       <workItem from="1574881097578" duration="5297000" />
-      <workItem from="1574966498136" duration="1973000" />
+      <workItem from="1574966498136" duration="7596000" />
     </task>
     <task id="LOCAL-00001" summary="Creation of substrings based on treshold.">
       <created>1574885174119</created>
@@ -129,5 +125,16 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>8</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

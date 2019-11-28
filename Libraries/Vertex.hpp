@@ -9,17 +9,26 @@ using namespace std;
 class Vertex{
 private:
    string seq = "0";
-   vector<string> adj_list;
-   vector<string> pred_list;
+   int seq_number = 0;
    vector<int> qual_list;
 public:
-   explicit Vertex(string seq = "0", vector<int> qual_list = vector<int>(0));
+   vector<Vertex*> adj_list;
 
-   void setSequence(string seq);
+   explicit Vertex(string sequence = "0", vector<int> qual = vector<int>(0), int number=0);
+
+   void setSequence(string sequence);
+
+   bool doesMatch(string sequence);
+
+   bool doesMatchWithMiss(string sequence);
 
    string getSequence();
 
    vector<int> getQualities();
+
+   Vertex* getSelf();
+
+   int getSeqNumber();
 };
 
 #endif
