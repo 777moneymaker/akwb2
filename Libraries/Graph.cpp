@@ -38,7 +38,7 @@ void Graph::connectVertices(){
                     continue;
                 for(auto &x : this->sequences_vertices[j]){
                     if(v.doesMatch(x.getSequence())){
-                        if(not(count(v.adj_list.begin(), v.adj_list.end(), &x))){
+                        if(not(count(v.adj_list.begin(), v.adj_list.end(), x.getSelf()))){
                             v.adj_list.push_back(x.getSelf());
                         }
                     }
