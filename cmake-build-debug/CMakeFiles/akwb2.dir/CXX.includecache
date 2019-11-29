@@ -6,29 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/moneymaker/Desktop/akwb2/Libraries/Graph.cpp
-Graph.hpp
-/home/moneymaker/Desktop/akwb2/Libraries/Graph.hpp
-iostream
--
-fstream
--
-vector
--
-string
--
-
-/home/moneymaker/Desktop/akwb2/Libraries/Graph.hpp
+../Libraries/Graph.hpp
 iostream
 -
 vector
 -
 Vertex.hpp
-/home/moneymaker/Desktop/akwb2/Libraries/Vertex.hpp
+../Libraries/Vertex.hpp
 
-/home/moneymaker/Desktop/akwb2/Libraries/Vertex.hpp
+../Libraries/Vertex.hpp
 iostream
 -
 vector
 -
+
+/home/moneymaker/Desktop/akwb2/main.cpp
+iostream
+-
+tuple
+-
+Graph.hpp
+/home/moneymaker/Desktop/akwb2/Graph.hpp
 

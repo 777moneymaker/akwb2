@@ -13,8 +13,23 @@ int main(){
             make_tuple("sample4.fasta", "qualities4.qual"),
             make_tuple("sample5.fasta", "qualities5.qual")
     };
-    // align sequences for each file
-    auto *G = new Graph(4, 30, "sample1.fasta", "qualities1.qual");
+    int quality, treshhold;
+    try{
+        cout << "What treshold [4, 7]?: " << endl;
+        cin >> treshhold;
+        if(not(cin.good())){
+            throw invalid_argument("Wrong number!");
+        }
+        cout << "What quality [0, 37]?: " << endl;\
+        cin >> quality;
+        if(not(cin.good())){
+            throw invalid_argument("Wrong number!");
+        }
+    }catch(exception &e){
+        cerr << e.what() << endl;
+        exit(EXIT_FAILURE);
+    }
+    auto *G = new Graph(treshhold, quality, "sample1.fasta", "qualities1.qual");
     G->alignSequences();
     delete G;
 

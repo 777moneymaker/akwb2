@@ -7,6 +7,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <limits>
 
 Graph::Graph(int t, int q, string f_file, string q_file){
     this->treshhold = t;
@@ -31,7 +32,8 @@ void Graph::alignSequences(){
             if(i == j)
                 continue;
             if(this->vertices[i].doesMatch(vertices[j].getSequence())){
-                matrix[i][j] += 1;
+                matrix[i][j] = 1;
+                matrix[j][i] = 1;
             }
         }
     }
@@ -41,6 +43,7 @@ void Graph::alignSequences(){
                 continue;
             if(this->vertices[i].doesMatchWithErrors(this->vertices[j].getDelSequence())){
                 matrix[i][j] = 1;
+                matrix[j][i] = 1;
             }
         }
     }
@@ -61,7 +64,7 @@ void Graph::alignSequences(){
                         current_clique.push_back(this->vertices[i]);
                         val++;
                     }
-                    matrix[i][j] = 444;
+                    matrix[i][j] = numeric_limits<int>::max(); // set to infinity (int max number)
                     current_clique.push_back(this->vertices[j]);
 
                 }
