@@ -27,12 +27,6 @@ public:
 
    void alignSequences();
 
-   void printSequence();
-
-   void printQualities();
-
-   void printSubstrings();
-
    int getQuality();
 
    int getTreshhold();

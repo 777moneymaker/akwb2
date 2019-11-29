@@ -22,8 +22,6 @@ public:
 
    void mutateVertex();
 
-   void setSequence(string sequence);
-
    int getSeqNumber();
 
    int getPosition();
@@ -31,11 +29,6 @@ public:
    string getSequence();
 
    string getDelSequence();
-
-   vector<int> getQualities();
-
-   Vertex *getSelf();
-
 
 };
 

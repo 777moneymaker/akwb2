@@ -17,14 +17,6 @@
       <change beforePath="$PROJECT_DIR$/Libraries/Graph.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Graph.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libraries/Vertex.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Vertex.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libraries/Vertex.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Vertex.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/Libraries/Graph.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/Libraries/Graph.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/Libraries/Vertex.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/Libraries/Vertex.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/akwb2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/akwb2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/qualities.qual" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/qualities.qual" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/sample.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sample.fasta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +84,7 @@
       <workItem from="1575012947361" duration="2333000" />
       <workItem from="1575030529295" duration="2085000" />
       <workItem from="1575033157917" duration="2015000" />
-      <workItem from="1575035235255" duration="1983000" />
+      <workItem from="1575035235255" duration="2098000" />
     </task>
     <task id="LOCAL-00001" summary="Creation of substrings based on treshold.">
       <created>1574885174119</created>

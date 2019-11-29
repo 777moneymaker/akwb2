@@ -17,10 +17,6 @@ Vertex::Vertex(string sequence, int pos, vector<int> qual, int number, int q, in
 
 }
 
-Vertex *Vertex::getSelf(){
-    return this;
-}
-
 void Vertex::mutateVertex(){
     string temp_seq = this->seq;
     if(this->treshhold > 5){
@@ -59,10 +55,6 @@ void Vertex::mutateVertex(){
     return void();
 }
 
-void Vertex::setSequence(string sequence){
-    this->seq = sequence;
-}
-
 bool Vertex::doesMatch(string sequence){
     if(this->seq.size() not_eq sequence.size()){
         return false;
@@ -87,10 +79,6 @@ string Vertex::getSequence(){
 
 string Vertex::getDelSequence(){
     return this->seq_del;
-}
-
-vector<int> Vertex::getQualities(){
-    return this->qual_list;
 }
 
 int Vertex::getSeqNumber(){

@@ -134,13 +134,6 @@ void Graph::createSubstrings(){
     }
 }
 
-void Graph::printSubstrings(){
-    for(auto &v : this->vertices){
-        cout << v.getSequence() << ": " << v.getDelSequence() << " ";
-    }
-    cout << endl;
-}
-
 void Graph::readQualities(){
     fstream file("qualities.qual", ios::in);
     string single_quality;
@@ -171,24 +164,6 @@ void Graph::readSequence(){
                 this->sequences[row].push_back(c);
             }
         }
-    }
-}
-
-void Graph::printQualities(){
-    for(const auto &line : this->qualities){
-        for(const auto &qual : line){
-            cout << qual << " ";
-        }
-        cout << endl;
-    }
-}
-
-void Graph::printSequence(){
-    for(const auto &line : this->sequences){
-        for(const auto &base : line){
-            cout << base << " ";
-        }
-        cout << endl;
     }
 }
 
