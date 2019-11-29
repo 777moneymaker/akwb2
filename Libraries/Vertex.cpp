@@ -1,37 +1,66 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "Vertex.hpp"
-#include "Graph.hpp"
 
 using namespace std;
 
-Vertex::Vertex(string sequence, vector<int> qual, int number, int q){
+Vertex::Vertex(string sequence, int pos, vector<int> qual, int number, int q, int tresh){
     this->seq = sequence;
+    this->seq_del = sequence;
+    this->position = pos;
     this->qual_list = qual;
     this->seq_number = number;
     this->quality = q;
+    this->treshhold = tresh;
+    this->mutateVertex();
 
 }
 
-Vertex* Vertex::getSelf(){
+Vertex *Vertex::getSelf(){
     return this;
 }
 
-Vertex* Vertex::searchForMutations(){
+void Vertex::mutateVertex(){
     string temp_seq = this->seq;
-    int min = 40;
-    int min_index = 0;
-    for(int i = 0; i < this->qual_list.size(); i++){
-        if(this->qual_list[i] < min){
-            min = this->qual_list[i];
-            min_index = i;
+    if(this->treshhold > 5){
+        for(int i = 0; i < this->seq.size(); i++){
+            if(this->qual_list[i] < this->quality){
+                temp_seq[i] = '_';
+            }
+        }
+        this->seq_del = temp_seq;
+        return void();
+    }else{
+        int min = 40;
+        int min_index = 0;
+        int count = 0;
+        for(int i = 0; i < this->seq.size(); i++){
+            for(int j = 0; j < this->qual_list.size(); j++){
+                if(count == 1)
+                    return void();
+                min_index = 0;
+                min = 40;
+                if(this->qual_list[i] < min){
+                    min = this->qual_list[i];
+                    min_index = i;
+                }
+            }
+            if(this->qual_list[min_index] < this->quality){
+                temp_seq[min_index] = '_';
+                count++;
+                this->qual_list.erase(find(this->qual_list.begin(), this->qual_list.end(), min));
+            }
+            if(temp_seq not_eq this->seq_del){
+                this->seq_del = temp_seq;
+            }
         }
     }
-    if(this->qual_list[min_index] < this->quality){
-        temp_seq[min_index] = '_';
-    }
-    cout<<temp_seq << " ";
-    return new Vertex(temp_seq, this->getQualities(), this->getSeqNumber());
+    return void();
+}
+
+void Vertex::setSequence(string sequence){
+    this->seq = sequence;
 }
 
 bool Vertex::doesMatch(string sequence){
@@ -44,19 +73,20 @@ bool Vertex::doesMatch(string sequence){
 
 bool Vertex::doesMatchWithErrors(string sequence){
     int count = 0;
-    for(int i = 0; i < sequence.size(); i++){
-        if(this->seq[i] == sequence[i])
+    for(int i = 0; i < (int)sequence.size(); i++){
+        if(this->seq_del[i] == sequence[i]){
             count++;
+        }
     }
     return count >= seq.size() - 1;
 }
 
-void Vertex::setSequence(string sequence){
-    this->seq = sequence;
-}
-
 string Vertex::getSequence(){
     return this->seq;
+}
+
+string Vertex::getDelSequence(){
+    return this->seq_del;
 }
 
 vector<int> Vertex::getQualities(){
@@ -65,4 +95,8 @@ vector<int> Vertex::getQualities(){
 
 int Vertex::getSeqNumber(){
     return this->seq_number;
+}
+
+int Vertex::getPosition(){
+    return this->position;
 }

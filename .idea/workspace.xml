@@ -13,7 +13,18 @@
   <component name="ChangeListManager">
     <list default="true" id="3c5f4371-7800-4f2d-99be-0dd688d7465b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Graph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Graph.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Graph.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Graph.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Vertex.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Vertex.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Vertex.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Vertex.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/Libraries/Graph.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/Libraries/Graph.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/Libraries/Vertex.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/Libraries/Vertex.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/akwb2.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/akwb2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/akwb2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/qualities.qual" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/qualities.qual" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/sample.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sample.fasta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +87,12 @@
       <workItem from="1574866105164" duration="3021000" />
       <workItem from="1574881097578" duration="5297000" />
       <workItem from="1574966498136" duration="11229000" />
-      <workItem from="1574977845520" duration="5000" />
+      <workItem from="1574977845520" duration="4491000" />
+      <workItem from="1574982489750" duration="5892000" />
+      <workItem from="1575012947361" duration="2333000" />
+      <workItem from="1575030529295" duration="2085000" />
+      <workItem from="1575033157917" duration="2015000" />
+      <workItem from="1575035235255" duration="1983000" />
     </task>
     <task id="LOCAL-00001" summary="Creation of substrings based on treshold.">
       <created>1574885174119</created>
@@ -118,16 +134,5 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>8</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
