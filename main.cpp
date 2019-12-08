@@ -1,3 +1,11 @@
+/***
+ *      _____ _____ _____                                                 _
+ *     |___  |___  |___  | __ ___   ___  _ __   ___ _   _ _ __ ___   __ _| | _____ _ __
+ *        / /   / /   / / '_ ` _ \ / _ \| '_ \ / _ \ | | | '_ ` _ \ / _` | |/ / _ \ '__|
+ *       / /   / /   / /| | | | | | (_) | | | |  __/ |_| | | | | | | (_| |   <  __/ |
+ *      /_/   /_/   /_/ |_| |_| |_|\___/|_| |_|\___|\__, |_| |_| |_|\__,_|_|\_\___|_|
+ *                                                  |___/
+ */
 #include <iostream>
 #include <tuple>
 #include "Libraries/Graph.hpp"
@@ -20,11 +28,15 @@ int main(){
         if(not(cin.good())){
             throw invalid_argument("Wrong number!");
         }
-        cout << "What quality [0, 32]?: " << endl;\
+        if(treshhold < 4 or treshhold > 7)
+            throw invalid_argument("Wrong number!");
+        cout << "What quality [1, 40]?: " << endl;\
         cin >> quality;
         if(not(cin.good())){
             throw invalid_argument("Wrong number!");
         }
+        if(quality < 1 or quality > 40)
+            throw invalid_argument("Wrong number!");
     } catch(exception &e){
         cerr << e.what() << endl;
         exit(EXIT_FAILURE);

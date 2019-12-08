@@ -1,7 +1,11 @@
-//
-// Created by Miłosz Chodkowski on 27/11/2019.
-//
-
+/***
+ *      _____ _____ _____                                                 _
+ *     |___  |___  |___  | __ ___   ___  _ __   ___ _   _ _ __ ___   __ _| | _____ _ __
+ *        / /   / /   / / '_ ` _ \ / _ \| '_ \ / _ \ | | | '_ ` _ \ / _` | |/ / _ \ '__|
+ *       / /   / /   / /| | | | | | (_) | | | |  __/ |_| | | | | | | (_| |   <  __/ |
+ *      /_/   /_/   /_/ |_| |_| |_|\___/|_| |_|\___|\__, |_| |_| |_|\__,_|_|\_\___|_|
+ *                                                  |___/
+ */
 #include "Graph.hpp"
 #include <iostream>
 #include <fstream>
@@ -128,7 +132,6 @@ void Graph::createSubstrings(){
             pos = 1;
             base_stack.clear();
             qual_stack.clear();
-            //this->sequences_vertices.emplace_back(vector<Vertex>());
             for(auto &c : this->sequences[i]){
                 base_stack.push_back(c);
             }
@@ -145,7 +148,6 @@ void Graph::createSubstrings(){
                 }
                 this->vertices.emplace_back(seq, pos, v_qualities, i + 1, this->getQuality(), this->getTreshhold());
                 pos++;
-                //this->vertices.push_back(new Vertex(seq, v_qualities, i + 1, this->getQuality()));
                 seq = "";
                 v_qualities.clear();
                 qual_stack.erase(qual_stack.begin());
@@ -170,10 +172,9 @@ void Graph::readQualities(){
         }else{
             stringstream ss(quality);
             int num;
-            while (ss >> num){
+            while(ss >> num){
                 this->qualities[row].push_back(num);
             }
-
         }
     }
 }

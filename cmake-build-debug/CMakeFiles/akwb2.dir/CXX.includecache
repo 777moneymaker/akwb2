@@ -28,9 +28,25 @@ vector
 Vertex.hpp
 /home/moneymaker/Desktop/akwb2/Libraries/Vertex.hpp
 
+/home/moneymaker/Desktop/akwb2/Libraries/Vertex.cpp
+iostream
+-
+vector
+-
+Vertex.hpp
+/home/moneymaker/Desktop/akwb2/Libraries/Vertex.hpp
+
 /home/moneymaker/Desktop/akwb2/Libraries/Vertex.hpp
 iostream
 -
 vector
 -
+
+/home/moneymaker/Desktop/akwb2/main.cpp
+iostream
+-
+tuple
+-
+Libraries/Graph.hpp
+/home/moneymaker/Desktop/akwb2/Libraries/Graph.hpp
 
