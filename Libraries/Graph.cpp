@@ -7,16 +7,22 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include <limits>
+#include <sstream>
 
 Graph::Graph(int t, int q, string f_file, string q_file){
     this->treshhold = t;
     this->quality = q;
-    this->fasta_file = f_file;
-    this->qual_file = q_file;
     this->readSequence();
     this->readQualities();
     this->createSubstrings();
+}
+
+int Graph::getQuality(){
+    return quality;
+}
+
+int Graph::getTreshhold(){
+    return this->treshhold;
 }
 
 void Graph::alignSequences(){
@@ -40,31 +46,30 @@ void Graph::alignSequences(){
             if(i == j)
                 continue;
             if(this->vertices[i].doesMatchWithErrors(this->vertices[j].getDelSequence())){
-                this->vertices[j].setComparsion(true);
                 matrix[i][j] = 1;
                 matrix[j][i] = 1;
+                this->vertices[j].setComparsion(true);
             }
         }
     }
-    int index = 0, val = 1;
+    int index = 0, count = 1;
     vector<Vertex> current_clique, best_clique;
 
     for(int i = 0; i < size; i++){
         current_clique.clear();
-        index = 0, val = 1;
-        // upper side of matrix
+        index = 0;
         for(int j = 0; j < size; j++){
             if(i == j)
                 continue;
             if(matrix[i][j] == 1){
                 if(this->vertices[index].getSeqNumber() != this->vertices[j].getSeqNumber()){
                     index = j;
-                    if(val == 1){
+                    if(count == 1){
                         current_clique.push_back(this->vertices[i]);
-                        val++;
+                        count++;
                     }
-                    matrix[i][j] = numeric_limits<int>::max(); // set to infinity (int max number)
                     current_clique.push_back(this->vertices[j]);
+                    matrix[i][j] = 0;
 
                 }
             }
@@ -76,24 +81,35 @@ void Graph::alignSequences(){
 
 
     cout << endl << "CLIQUE: " << endl;
-    for(auto &c : best_clique){
-        if(c.getComparsionStatus()) {
-            cout << c.getDelSequence();
+    for(auto &v : best_clique){
+        if(v.getComparsionStatus()){
+            cout << v.getDelSequence();
         }else{
-            cout << c.getSequence();
+            cout << v.getSequence();
         }
-        cout << " seq no.: " << c.getSeqNumber()
-             << " pos: " << c.getPosition() << endl;
+        cout << " seq no.: " << v.getSeqNumber()
+             << " pos: " << v.getPosition() << endl;
     }
 
     fstream file("output.txt", ios::out);
+    for(auto &v : best_clique){
+        if(v.getComparsionStatus()){
+            file << v.getDelSequence();
+        }else{
+            file << v.getSequence();
+        }
+        file << " seq no.: " << v.getSeqNumber()
+             << " pos: " << v.getPosition() << endl;
+    }
+    file << endl;
     for(int i = 0; i < (int)best_clique.size(); i++){
+        file << ">seq no. " << best_clique[i].getSeqNumber() << endl;
         for(int j = 0; j < (int)this->sequences[i].size(); j++){
             if(j == best_clique[i].getPosition() - 1){
-                file << "   ";
+                file << "___";
             }
             if(j == best_clique[i].getPosition() - 1 + this->treshhold){
-                file << "   ";
+                file << "___";
             }
             file << this->sequences[i][j];
         }
@@ -143,15 +159,21 @@ void Graph::createSubstrings(){
 
 void Graph::readQualities(){
     fstream file("qualities.qual", ios::in);
-    string single_quality;
+    string quality;
     int row = -1;
     while(!file.eof()){
-        file >> single_quality;
-        if(single_quality == ">"){
+        getline(file, quality);
+        if(quality[0] == '>'){
             this->qualities.emplace_back(vector<int>());
             row++;
+            continue;
         }else{
-            this->qualities[row].push_back(stoi(single_quality));
+            stringstream ss(quality);
+            int num;
+            while (ss >> num){
+                this->qualities[row].push_back(num);
+            }
+
         }
     }
 }
@@ -161,23 +183,16 @@ void Graph::readSequence(){
     int row = -1;
     fstream file("sample.fasta", ios::in);
     while(!file.eof()){
-        file >> base;
+        getline(file, base);
         if(base[0] == '>'){
             this->sequences.emplace_back(vector<char>());
             row++;
             continue;
         }else{
             for(auto c : base){
-                this->sequences[row].push_back(c);
+                if(c != ' ')
+                    this->sequences[row].push_back(c);
             }
         }
     }
-}
-
-int Graph::getQuality(){
-    return quality;
-}
-
-int Graph::getTreshhold(){
-    return this->treshhold;
 }

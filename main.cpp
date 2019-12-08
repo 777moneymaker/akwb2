@@ -25,7 +25,7 @@ int main(){
         if(not(cin.good())){
             throw invalid_argument("Wrong number!");
         }
-    }catch(exception &e){
+    } catch(exception &e){
         cerr << e.what() << endl;
         exit(EXIT_FAILURE);
     }

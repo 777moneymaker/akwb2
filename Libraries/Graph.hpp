@@ -10,7 +10,6 @@ using namespace std;
 class Graph{
 private:
    int treshhold, quality;
-   string fasta_file, qual_file;
    vector<vector<char> > sequences;
    vector<vector<int> > qualities;
    vector<Vertex> vertices;
@@ -25,11 +24,12 @@ public:
    explicit Graph(int treshhold = 4, int quality = 15, string f_file = "sample1.fasta",
                   string q_file = "qualities1.qual");
 
-   void alignSequences();
-
    int getQuality();
 
    int getTreshhold();
+
+   void alignSequences();
+
 };
 
 

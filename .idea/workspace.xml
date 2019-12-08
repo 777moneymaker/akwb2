@@ -14,6 +14,7 @@
     <list default="true" id="3c5f4371-7800-4f2d-99be-0dd688d7465b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libraries/Graph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Graph.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Graph.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Graph.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libraries/Vertex.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Vertex.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libraries/Vertex.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Vertex.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
@@ -44,6 +45,8 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/akwb2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/akwb2.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/qualities.qual" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/qualities.qual" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/sample.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sample.fasta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,6 +72,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -122,6 +126,7 @@
       <workItem from="1575456227503" duration="115000" />
       <workItem from="1575456642875" duration="1598000" />
       <workItem from="1575458916666" duration="2760000" />
+      <workItem from="1575796917830" duration="6558000" />
     </task>
     <task id="LOCAL-00001" summary="Creation of substrings based on treshold.">
       <created>1574885174119</created>
@@ -169,13 +174,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Libraries/Vertex.cpp</url>
-          <line>27</line>
-          <option name="timeStamp" value="1" />
+          <line>32</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Libraries/Vertex.cpp</url>
-          <line>73</line>
-          <option name="timeStamp" value="2" />
+          <line>43</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Libraries/Graph.cpp</url>
+          <line>119</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Libraries/Graph.cpp</url>
+          <line>157</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
