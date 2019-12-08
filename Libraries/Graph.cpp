@@ -41,7 +41,6 @@ void Graph::alignSequences(){
                 continue;
             if(this->vertices[i].doesMatch(vertices[j].getSequence())){
                 matrix[i][j] = 1;
-                matrix[j][i] = 1;
             }
         }
     }
@@ -51,7 +50,6 @@ void Graph::alignSequences(){
                 continue;
             if(this->vertices[i].doesMatchWithErrors(this->vertices[j].getDelSequence())){
                 matrix[i][j] = 1;
-                matrix[j][i] = 1;
                 this->vertices[j].setComparsion(true);
             }
         }

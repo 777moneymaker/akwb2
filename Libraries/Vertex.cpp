@@ -86,7 +86,7 @@ void Vertex::mutateVertex(){
     }else{
         count = 0;
         for(int i = 0; i < (int)this->seq.size(); i++){
-            min = this->quality, min_index = 0;
+            min = this->quality, min_index = -1;
             for(int j = 0; j < (int)this->qual_list.size(); j++){
                 if(count)
                     break;
@@ -98,6 +98,8 @@ void Vertex::mutateVertex(){
             }
             if(count)
                 break;
+            if(min_index == -1)
+                continue;
             temp_seq[min_index] = 'X';
             count++;
         }
