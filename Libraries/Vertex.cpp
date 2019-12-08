@@ -17,33 +17,51 @@ Vertex::Vertex(string sequence, int pos, vector<int> qual, int number, int q, in
 
 }
 
+void Vertex::setComparsion(bool cmp){
+    this->compared_as_mutated = cmp;
+}
+
+bool Vertex::getComparsionStatus(){
+    return this->compared_as_mutated;
+}
+
 void Vertex::mutateVertex(){
     string temp_seq = this->seq;
+    int min_index = 0, min = 40, count = 0;
     if(this->treshhold > 5){
-        for(int i = 0; i < this->seq.size(); i++){
-            if(this->qual_list[i] < this->quality){
-                temp_seq[i] = '_';
+        count = 0;
+        for(int i = 0; i < (int)this->seq.size(); i++){
+            min = 40, min_index = 0;
+            for(int j = 0; j < (int)this->seq.size(); j++) {
+                if(count == 2)
+                    return void();
+                if(this->qual_list[i] < min) {
+                    min = this->qual_list[i];
+                    min_index = i;
+                }
+            }
+            if((this->qual_list[min_index] < this->quality) and temp_seq[min_index] != 'X'){
+                temp_seq[min_index] = 'X';
+                count++;
+                this->qual_list.erase(find(this->qual_list.begin(), this->qual_list.end(), min));
             }
         }
         this->seq_del = temp_seq;
         return void();
     }else{
-        int min = 40;
-        int min_index = 0;
-        int count = 0;
-        for(int i = 0; i < this->seq.size(); i++){
-            for(int j = 0; j < this->qual_list.size(); j++){
+        count = 0;
+        for(int i = 0; i < (int)this->seq.size(); i++){
+            min = 40, min_index = 0;
+            for(int j = 0; j < (int)this->qual_list.size(); j++){
                 if(count == 1)
                     return void();
-                min_index = 0;
-                min = 40;
                 if(this->qual_list[i] < min){
                     min = this->qual_list[i];
                     min_index = i;
                 }
             }
             if(this->qual_list[min_index] < this->quality){
-                temp_seq[min_index] = '_';
+                temp_seq[min_index] = 'X';
                 count++;
                 this->qual_list.erase(find(this->qual_list.begin(), this->qual_list.end(), min));
             }
@@ -56,11 +74,7 @@ void Vertex::mutateVertex(){
 }
 
 bool Vertex::doesMatch(string sequence){
-    if(this->seq.size() not_eq sequence.size()){
-        return false;
-    }else{
-        return this->seq == sequence;
-    }
+    return this->seq == sequence;
 }
 
 bool Vertex::doesMatchWithErrors(string sequence){
@@ -70,7 +84,8 @@ bool Vertex::doesMatchWithErrors(string sequence){
             count++;
         }
     }
-    return count >= seq.size() - 1;
+
+    return this->treshhold > 5 ? count >= seq.size() - 2 : count >= seq.size() - 1;
 }
 
 string Vertex::getSequence(){

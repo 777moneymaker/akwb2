@@ -1,6 +1,6 @@
 #include <iostream>
 #include <tuple>
-#include "Graph.hpp"
+#include "Libraries/Graph.hpp"
 
 using namespace std;
 
@@ -20,7 +20,7 @@ int main(){
         if(not(cin.good())){
             throw invalid_argument("Wrong number!");
         }
-        cout << "What quality [0, 37]?: " << endl;\
+        cout << "What quality [0, 32]?: " << endl;\
         cin >> quality;
         if(not(cin.good())){
             throw invalid_argument("Wrong number!");
@@ -33,7 +33,5 @@ int main(){
     G->alignSequences();
     delete G;
 
-    //for(auto &tup : file_names){
-    //}
     return 0;
 }

@@ -17,8 +17,6 @@ Graph::Graph(int t, int q, string f_file, string q_file){
     this->readSequence();
     this->readQualities();
     this->createSubstrings();
-    //this->connectVertices();
-    //this->connectWithErrors();
 }
 
 void Graph::alignSequences(){
@@ -42,6 +40,7 @@ void Graph::alignSequences(){
             if(i == j)
                 continue;
             if(this->vertices[i].doesMatchWithErrors(this->vertices[j].getDelSequence())){
+                this->vertices[j].setComparsion(true);
                 matrix[i][j] = 1;
                 matrix[j][i] = 1;
             }
@@ -54,7 +53,7 @@ void Graph::alignSequences(){
         current_clique.clear();
         index = 0, val = 1;
         // upper side of matrix
-        for(int j = i; j < size; j++){
+        for(int j = 0; j < size; j++){
             if(i == j)
                 continue;
             if(matrix[i][j] == 1){
@@ -78,7 +77,12 @@ void Graph::alignSequences(){
 
     cout << endl << "CLIQUE: " << endl;
     for(auto &c : best_clique){
-        cout << c.getSequence() << " seq no.: " << c.getSeqNumber()
+        if(c.getComparsionStatus()) {
+            cout << c.getDelSequence();
+        }else{
+            cout << c.getSequence();
+        }
+        cout << " seq no.: " << c.getSeqNumber()
              << " pos: " << c.getPosition() << endl;
     }
 
@@ -86,10 +90,10 @@ void Graph::alignSequences(){
     for(int i = 0; i < (int)best_clique.size(); i++){
         for(int j = 0; j < (int)this->sequences[i].size(); j++){
             if(j == best_clique[i].getPosition() - 1){
-                file << "___";
+                file << "   ";
             }
             if(j == best_clique[i].getPosition() - 1 + this->treshhold){
-                file << "___";
+                file << "   ";
             }
             file << this->sequences[i][j];
         }
